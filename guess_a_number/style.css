@@ -1,0 +1,48 @@
+body{
+	background-color:chocolate;
+}
+
+#main{
+	margin : 25px 90px 0 30px;
+}
+.card{
+	border: 3px solid darkolivegreen;
+	border-radius: 45px;
+	margin: 40px 120px 30px 50px;
+	padding: 20px;
+}
+#J1{
+	background-color: rgb(151, 70, 227);
+}
+#J2{
+	background-color: rgb(4, 86, 226);
+	display: none;
+}
+h1{
+	font-size: 45px;
+	color: darkgreen;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+h2{
+	font-size: 30px;
+}
+#instructions{
+	font-size: 30px;
+	margin: 0;
+}
+#nombreAFaireDeviner, #inputJ2{
+	padding: 10px;
+}
+button{
+	background-color: green;
+	padding: 10px;
+}
+#reset{
+	background-color: deeppink;
+}
+#dialogue{
+	font-size: 50px;
+	font-weight: bold;
+	color: blue;
+}

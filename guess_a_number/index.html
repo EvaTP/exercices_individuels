@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Guess a Number</title>
+	<script src="script.js" defer></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<section id="main">	
+		<h1>🎲 Guess a Number</h1>
+
+		<div id="J1" class="card">
+			<h2>👩🏼‍🦰 Joueur.se 1</h2>
+			<p id="instructions">Entrez un nombre à faire deviner<br>entre 0 et 50 :</p>
+			<!-- <label for="nombreAFaireDeviner">Entrez un chiffre entre 0 et 50 :</label> -->
+			<br><br>
+			<input id="nombreAFaireDeviner" type="text" 
+			placeholder="entre 0 et 50"
+			autocomplete="off" >
+			<br><br><br>
+			<button id="envoyer1">Envoyer</button>
+			<br><br>
+		</div>
+
+		<div id="J2" class="card">
+			<h2>👱🏾‍♂️ Joueur.se 2</h2>
+			<p id="instructions">Devinez le nombre !<br>Entrez un nombre entre 0 et 50 :</p>
+			<!-- <label for="nombreAFaireDeviner">Entrez un chiffre entre 0 et 50 :</label> -->
+			<br><br>
+			<input id="inputJ2" type="text" 
+			placeholder="entre 0 et 50"
+			autocomplete="off" >
+			<br><br><br>
+			<button id="envoyer2">Envoyer</button><br><br>
+			<button id="reset">Reset</button>
+		</div>
+
+		<p id="dialogue"></p>
+	</section>
+</body>
+</html>
