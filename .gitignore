@@ -1,0 +1,6 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers journaux
+*.log
