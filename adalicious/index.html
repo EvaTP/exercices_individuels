@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/svg" sizes="32x32" href="img/favicon-adalicious.svg">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<title>Adalicious</title>
+</head>
+<body>
+	<h1>🌭Ada<span>licious!</span></h1>
+	<h2>Le célèbre <em>diner</em> des développeurs web 3.0 😋</h2>
+
+	<main>
+		<h2>Commande ton menu 👇</h2>
+
+		<h3>Ton nom :</h3>
+		<input type="text">
+
+		<h3>Ton choix :</h3>
+
+		
+			<style>
+				.choix-plats {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 10px;
+				}
+		
+				.bouton-plat {
+					display: inline-block;
+					padding: 15px 25px;
+					border: 2px solid #ccc;
+					border-radius: 10px;
+					background-color: #f9f9f9;
+					text-align: center;
+					cursor: pointer;
+					font-size: 1.2em;
+				}
+		
+				.bouton-plat.selected {
+					border-color: #007bff;
+					background-color: #e0f7fa;
+					font-weight: bold;
+				}
+		
+				.bouton-plat input[type="checkbox"] {
+					display: none; /* Masquer la case à cocher par défaut */
+				}
+			</style>
+		</head>
+		<body>
+			<form id="form-plats">
+				<div class="choix-plats">
+
+					<label class="bouton-plat">
+						<input type="checkbox" name="plats" value="burger">
+						🍔  Hello World Burger,  8 €
+					</label>
+
+					<label class="bouton-plat">
+						<input type="checkbox" name="plats" value="frites">
+						🍟  404 Not Found Fries, 3.5 €
+					</label>
+
+					<label class="bouton-plat">
+						<input type="checkbox" name="plats" value="pizza">
+						🍕 React Pizza, 4 €
+					</label>
+		
+					<label class="bouton-plat">
+						<input type="checkbox" name="plats" value="salade">
+						🥗 Front-end Salad, 5 €
+					</label>
+		
+					<label class="bouton-plat">
+						<input type="checkbox" name="plats" value="tacos">
+						🌮  Git Pull Tacos, 4.5 €
+					</label>
+
+					<label class="bouton-plat">
+						<input type="checkbox" name="plats" value="nuggets">
+						🍗  JSON Nuggets, 7 €
+					</label>
+
+					<label class="bouton-plat">
+						<input type="checkbox" name="plats" value="fullmenu">
+						🍔🍦🍩🥤  Full-Stack menu, 10 €
+					</label>
+		
+					<label class="bouton-plat">
+						<input type="checkbox" name="plats" value="brownie">
+						🍫  Back-end Brownie, 3 €
+					</label>
+
+					<label class="bouton-plat">
+						<input type="checkbox" name="plats" value="milkshake">
+						🥤  Python Milk-shake, 2 €
+					</label>
+					<br><br>
+					<button id="submit" type="submit">Envoyer</button>
+				</div>
+			</form>
+	</main>
+	
+</body>
+</html>
