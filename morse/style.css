@@ -1,0 +1,35 @@
+*{
+	font-family: 'Courier New', Courier, monospace;
+	margin: 0.50em;
+}
+#containerTraducteurs{
+	display : flex;
+	flex-direction: row;
+	justify-content:space-around;
+	align-items: baseline;
+}
+.traducteur{
+	display : flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: baseline;
+	border: solid 1px black;
+	padding : 1em;
+	width: 40% auto;
+	height: 100% auto;
+}
+
+/* button{
+	opacity: 0.5;  Réduit l'opacité pour indiquer la désactivation 
+	cursor: not-allowed; Change le curseur en "sens interdit" 
+	position: relative; Nécessaire pour positionner l'icône 
+}
+
+button:hover::after {
+	content: ""; /* Icône "sens interdit" (vous pouvez utiliser une image à la place) 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); /* Centre l'icône 
+	font-size: 1.5em; /* Ajustez la taille de l'icône 
+} */

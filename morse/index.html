@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parlez-vous le morse</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<h1>🔮 Parlez-vous le morse ?</h1>
+	<h2>Transformer une chaîne de caractères en tableau</h2>
+	<!-- CHAMPS DE SAISIE -->
+	<div id="containerTraducteurs">
+		<div id="containerLtoM" class="traducteur">
+			<h3>Traduire un texte vers le morse</h3>
+			<label for="inputLatinToMorse">Saisissez votre texte</label>
+			<br>
+			<input type="text" id="inputLatinToMorse" placeholder="votre texte ici">
+			<br><br>
+			<button type="submit" id="buttonSubmitLatin">Envoyer</button>
+			<br><br>
+			<p class="resultat">Résultat :</p>
+			<p id="outputLatinToMorse"></p>
+		</div>
+	
+		<div id="containerMtoL" class="traducteur">
+			<h3>Traduire du morse en texte</h3>
+			<label for="inputMorseToLatin">Saisissez votre code Morse</label>
+			<br>
+			<input type="text" id="inputMorsetoLatin" placeholder="votre code morse ici">
+			<br><br>
+			<button type="submit" id="buttonSubmitMorse">Envoyer</button>
+			<br><br>
+			<p class="resultat">Résultat :</p>
+			<p id="outputMorseToLatin"></p>
+		</div>
+	</div>
+
+	<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join -->
+	
+	<script src="script.js"></script>
+</body>
+</html>

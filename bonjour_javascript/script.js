@@ -7,12 +7,22 @@ let userName = prompt("Quel est ton prénom ?");
 Attention, ici il s’agit bien de modifier la variable message et non le console.log()
 */
 
-let message = "Bonjour ";
-console.log(message);
+//let message = "Bonjour ";
+//console.log(message);
 
-let firstName = "Beyoncé";
-console.log(message + firstName + " !");
+//let firstName = "Beyoncé";
+//console.log(message + firstName + " !");
 
+// ou bien :
+// let message = "Bonjour" + firstName + " !";
+// méthode plus moderne :
+// mettre une fonction dans une variable (encapsulée dans une variable)
+const sayHello = (firstName) =>{
+	let firstName = "Beyoncé"
+	let message = "Bonjour " + firstName + "!";
+	console.log(message);
+}
+sayHello(toto);
 /*
 1. Encapsule ton code précédent dans une fonction nommée sayHello()
 2. Appelle la fonction sayHello() dans ton code pour t’assurer que tout continue de fonctionner.
@@ -46,10 +56,4 @@ sayHello(message, firstName, hour);
 
 
 document.querySelector('h1').innerText = message + userName;
-
-
-
-
-
-
 
