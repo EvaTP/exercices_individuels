@@ -41,7 +41,10 @@ VALUES
 	('Git Pull Tacos', 4.5),
     ('Front-end Salad', 5),
     ('Back-end Brownie', 3),
-	('Full Stack Menu', 10);
+	('Full Stack Menu', 10),
+    ('React Pizza', 4),
+    ('Python Milk-shake', 2);
+
 
 
 INSERT INTO clients (name)
