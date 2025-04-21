@@ -1,31 +1,50 @@
 function tryWord(word, base) {
-	// TODO: fix jeu sensible à la casse.
-	if (word === base) {
-		return true
+
+	let wellPlaced = [];  
+    let notInWord = [];  
+    let missplaced = [];  
+
+	// TODO: fix jeu sensible à la casse :
+	const lowerWord = word.toLowerCase();
+	const lowerBase = base.toLowerCase();
+
+	if (lowerWord === lowerBase) {
+		return { wellPlaced: lowerWord.split(''), missplaced: [], notInWord: [] };
   } else {
-  	let wellPlaced = [];
-    let notInWord = [];
-    let missplaced = [];
-    
-  	let arrayBase = base.split('');
-    let arrayWord = word.split('');
-    
-		for (let i = 0; i < arrayBase.length-1; i++) {
-    	if (arrayBase[i] === arrayWord[i]) {
-      	wellPlaced.push(arrayWord[i]);
-		}	else {
-			missplaced.push(arrayWord[i])
+	let arrayBase = lowerBase.split('');
+	let arrayWord = lowerWord.split('');
+	let baseCounts = {};
+	let wordCounts = {};
+	
+	for (const char of arrayBase) {
+		baseCounts[char] = (baseCounts[char] || 0) + 1;
+	}
+	
+	for (let i = 0; i < arrayBase.length; i++) {
+	if (arrayBase[i] === arrayWord[i]) {
+		wellPlaced.push(arrayWord[i]);
+		wordCounts[arrayWord[i]] = (wordCounts[arrayWord[i]] || 0) + 1;
 		}
-    }
-    
-    for (const char of arrayWord) {
-    	if (arrayBase.includes(char) === false) {
-      	notInWord.push(char)
-      }
-    }
-    return { wellPlaced: wellPlaced, missplaced: missplaced, notInWord: notInWord }
-  }
+	}
+	for (let i = 0; i < arrayWord.length; i++) {
+	if (arrayBase.includes(arrayWord[i])) {
+		if (arrayBase[i] !== arrayWord[i]) {
+			wordCounts[arrayWord[i]] = (wordCounts[arrayWord[i]] || 0) + 1;
+			if (wordCounts[arrayWord[i]] <= baseCounts[arrayWord[i]]) {
+				missplaced.push(arrayWord[i]);
+			}
+		}
+	} else {
+		notInWord.push(arrayWord[i]);
+		}
+	}
+	missplaced = [...new Set(missplaced)];
+	notInWord = [...new Set(notInWord)];
+
+	return { wellPlaced: wellPlaced, missplaced: missplaced, notInWord: notInWord };
+	}
 }
+
 
 function guess() {
 	let base = 'dictionnaire'
@@ -36,10 +55,9 @@ function guess() {
 	document.getElementById("well").innerText = 'Bien placé: '+result.wellPlaced.join(', ')
 	document.getElementById("miss").innerText = 'Mal placé: '+result.missplaced.join(', ')
 	document.getElementById("not").innerText = 'Pas dans le mot: '+result.notInWord.join(', ')
-		if(word === base){
-			document.getElementById("win").innerText = 'Vous avez gagné'
+		if(word.toLowerCase() === base.toLowerCase()){
+			document.getElementById("win").innerText = 'Vous avez gagné ! 🎉 🎈'
+		}else{
+			document.getElementById("win").innerText = '';
 		}
-	// if (result.wellPlaced.length === base.length) {
-	// 	document.getElementById("win").innerText = 'Vous avez gagné'
-	// 	}
 }
