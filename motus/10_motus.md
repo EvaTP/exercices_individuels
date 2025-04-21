@@ -6,6 +6,9 @@ Vous trouverez en annexe les sources HTML et JavaScript du jeu Motus. Ces source
 
 L’objectif de l’exercice est d’avoir un jeu fonctionnel.
 
+# Objectif
+S’approprier une code base qui n’est pas la sienne. Trouver et corriger des bugs.
+
 ## Étape 1
 
 Commencez par intégrer le code en annexe dans des fichiers HTML et JS. Faites le tour de ce qui fonctionne et de ce qui ne fonctionne pas.
