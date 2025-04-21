@@ -25,7 +25,6 @@ submitNameButton.addEventListener('click', () => {
     if (firstName) {
 		helloFirstNameDiv.innerHTML = `Bonjour <span style='color: blue;'>${firstName}</span>`;
         welcomePage.classList.add('hidden');
-		// console.log('cacher la welcome page');
         orderMenuPage.classList.remove('hidden');
 		messageErreur.classList.add('hidden');
     } else {
@@ -34,6 +33,7 @@ submitNameButton.addEventListener('click', () => {
 		messageErreur.style.fontSize = ('1.5em');
     }fondecran.style.backgroundColor = ('white');
 });
+
 
 // ***********************
 //   MENU & ORDER PAGE
@@ -44,6 +44,7 @@ const menuListDiv = document.querySelector('#menu');
 
 const commandes = [];
 
+// AFFICHER LE MENU
 menus.forEach((option)=>{
 	const optionMenu = document.createElement("div");
     optionMenu.id = option.plate;
@@ -71,9 +72,7 @@ menus.forEach((option)=>{
     const orderButton = document.createElement("button");
     orderButton.innerText = "Commander";
     orderButton.classList.add("submit-order");
-     // commanderButton.dataset.plate = option.plate;Stocker le nom du plat dans un attribut data
-	 //orderButton.id = `commander-${option.plate}`; // ID unique pour le bouton
-	 optionMenu.appendChild(orderButton);
+	optionMenu.appendChild(orderButton);
 
     optionMenu.classList.add("optionMenu");
     menuListDiv.appendChild(optionMenu);
@@ -84,30 +83,53 @@ menus.forEach((option)=>{
 //   ORDER TRACKING PAGE
 // ************************
 
+
 // Eléments HTML
 const orderTracking = document.querySelector('#order-tracking');
 
-// récupération du plat cliqué
-menuListDiv.addEventListener('click',(event) => {
+// ENREGISTRER LA COMMANDE
+function enregistrerCommande(commande) {
+    const commandes = JSON.parse(localStorage.getItem("commandes")) || [];
+    commandes.push(commande);
+    localStorage.setItem("commandes", JSON.stringify(commandes));
+}
+
+menuListDiv.addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON' && event.target.classList.contains('submit-order')) {
-        
-		welcomePage.classList.add('hidden');
+        // Navigation vers la page de suivi
+        welcomePage.classList.add('hidden');
         orderMenuPage.classList.add('hidden');
-		orderTrackingPage.classList.remove('hidden');
-		thanksFirstNameDiv.innerHTML = `Merci pour ta commande <span style='color: blue;'>${firstName}</span>`;
-		
-		const bouton = event.target;
+        orderTrackingPage.classList.remove('hidden');
+
+        // Récupération des infos du plat
+        const bouton = event.target;
         const divPlat = bouton.closest('.optionMenu');
-        const nomPlat = divPlat.id; // l'id est le nom du plat
-		const emojiPlat = divPlat.querySelector('.imageMenu').innerText;
-        console.log("Plat commandé :", emojiPlat, nomPlat);
+        const nomPlat = divPlat.id;
+        const emojiPlat = divPlat.querySelector('.imageMenu').innerText;
+		console.log("Plat commandé :", emojiPlat, nomPlat);
 
-		// ➕ Ajouter à la liste des commandes
-        // commandes.push({ nom: nomPlat, emoji: emojiPlat });
-		 // Créer une chaîne avec tous les plats commandés
-		 // const recap = commandes.map(c => `${c.emoji} ${c.nom}`).join('\n');
+        // Affichage de la confirmation
+        thanksFirstNameDiv.innerHTML = `Merci pour ta commande <span style='color: blue;'>${firstName}</span>`;
+        
+        // Création de l'objet "commande" et enregistrement de la commande dans le localStorage
+        const commande = {
+            client: firstName,
+            plat: nomPlat,
+            emoji: emojiPlat,
+            statut: "en préparation"
+        };
+		// afficher la commande au client
+		orderTracking.innerHTML = `Ta commande <br><span class="imageMenu">${emojiPlat}</span><br>${nomPlat} <br>est <span class="statut">${commande.statut}</span>`;
 
-		orderTracking.innerText = `Ta commande \n${emojiPlat}\n${nomPlat} \nest en cours`;
-		// orderTracking.innerText = `Ta commande \n${recap} \nest en cours`;
+		
+		// orderTracking.innerText = `Ta commande \n${emojiPlat}\n${nomPlat} \nest <span class="statut">${commande.statut}</span>`;
+        // NOTE : \n ne fonctionne que avec innerText; innerHTML n'interprète pas les retours à la ligne car il s'attend à du HTML, pas du texte brut.
+		// pour forcer un retour à la ligne avec innerHTML il faut utiliser la balise <br>
+		enregistrerCommande(commande); // Appel à ta fonction
     }
 });
+
+
+
+
+
