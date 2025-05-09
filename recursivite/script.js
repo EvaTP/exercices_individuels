@@ -40,7 +40,7 @@ const dossierPrincipal = {
 // console.log(dossierPrincipal);
 // fichier json à parcourir
 
-// étape 1 : afficher le nom du dossier principal
+// ETAPE 1 : afficher le nom du dossier principal
 
 //   function afficherDossier(dossierPrincipal){
 // 	console.log("🗂️", dossierPrincipal.nom);
@@ -48,24 +48,35 @@ const dossierPrincipal = {
 //   afficherDossier(dossierPrincipal);
 
 
-// étape 2 : afficher dossier itératif et dossier recursif
+// ETAPE 2 : afficher dossier itératif et dossier recursif
 // fonction itérative : parcourir le premier niveau du tableau.
 // Indice : dans l’objet, un objet de type “dossier” a une propriété “contenu” alors qu’un fichier n’en a pas …
 
 function afficherDossierIteratif(dossierPrincipal){
-	console.log("🗂️", dossierPrincipal.nom);
+	// console.log("🗂️", dossierPrincipal.nom);
 
-	for(let i = 0; i < dossierPrincipal.contenu.length; i++);
+	for(let i = 0; i < dossierPrincipal.contenu.length; i++){
 		const element = dossierPrincipal.contenu[i];
 		console.log(element.nom);
-		// console.log(dossierPrincipal.contenu[i].nom);
-		// console.log("🗂️",dossierPrincipal.nom);
+		//console.log(dossierPrincipal.contenu[i].nom);
+	}
 }
 afficherDossierIteratif(dossierPrincipal);
 
 
+function afficherDossiersRecursifs(dossier) {
+    console.log(dossier.nom); // Affiche le nom du dossier principal
 
-
+    if (dossier.contenu && Array.isArray(dossier.contenu)) {
+        for (const element of dossier.contenu) {
+            console.log(element.nom); // Affiche les noms des éléments (dossiers et fichiers) du premier niveau
+        }
+    }
+}
+afficherDossiersRecursifs(dossier);
+// function afficherDossierRecursif(dossierPrincipal){
+// 	const elem = 
+// }
 
 // étape 3 : Complète la fonction pour afficher les dossiers de troisième niveau
 // (ex: les dossiers “Pico 8” et “Dataviz” sont des dossiers de troisième niveau car ils se trouvent dans un dossier “Projets collectifs, lui-même dans le dossier “Ada”).
