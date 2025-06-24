@@ -1,0 +1,8 @@
+# mac OS
+.DS_Store
+
+node_modules/
+
+instructions.md
+
+

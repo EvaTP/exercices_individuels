@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+	 <link href="/src/style.css" rel="stylesheet">
+
+
+	<title>Calculette graphique</title>
+</head>
+<body>
+	<main class="flex flex-col">
+	<h1 class="text-4xl font-bold mb-5">Calculette</h1>
+		<div class="container" class="size-24 object-center">
+			<div id="calculatrice" class="rounded-md p-10" >
+
+				<div id="result" class="bg-sky-500/100 mt-4 mb-4 p-4 rounded-lg text-lg">0</div>
+
+				<div id="buttonsGrid" class="grid grid-cols-3 grid-rows-3 gap-5">
+					<input type="button" value="1" class="btn-digit m-10 w-14">
+					<input type="button" value="2" class="btn-digit m-10 w-14">
+					<input type="button" value="3" class="btn-digit m-10 w-14">
+					<input type="button" value="4" class="btn-digit m-8 w-14">
+					<input type="button" value="5" class="btn-digit m-8 w-14">
+					<input type="button" value="6" class="btn-digit m-8 w-14">
+					<input type="button" value="7" class="btn-digit m-8 w-14">
+					<input type="button" value="8" class="btn-digit m-8 w-14">
+					<input type="button" value="9" class="btn-digit m-8 w-14">
+					<input type="button" value="0" class="btn-digit m-8 w-14">
+					<input type="button" value="," class="btn-digit m-8 w-14">
+
+					<input type="button" value="+" class="btn-operator text-lg font-bold">
+					<input type="button" value="-" class="btn-operator text-lg font-bold">
+					<input type="button" value="*" class="btn-operator text-lg font-bold">
+					<input type="button" value="/" class="btn-operator text-lg font-bold">
+
+					<input type="button" value="=" class="btn-operator col-span-2">
+					<input type="button" value="AC" class="btn-digit">
+
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+
+	<script src="src/script.js"></script>
+</body>
+</html>
