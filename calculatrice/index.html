@@ -1,50 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
-	 <link href="/src/style.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="/src/style.css" rel="stylesheet" />
+    <title>Calculette graphique</title>
+  </head>
 
+  <body class="min-h-screen flex items-center justify-center bg-gray-100">
+    <main class="flex flex-col">
+      <h1 class="text-4xl text-center font-bold mb-8 text-gray-800">
+        Calculette
+      </h1>
 
-	<title>Calculette graphique</title>
-</head>
-<body>
-	<main class="flex flex-col">
-	<h1 class="text-4xl font-bold mb-5">Calculette</h1>
-		<div class="container" class="size-24 object-center">
-			<div id="calculatrice" class="rounded-md p-10" >
+      <div class="container" class="size-24 object-center">
+        <div id="calculatrice" class="bg-gray-700 rounded-xl p-10">
+          <div
+            id="result"
+            class="bg-sky-500/100 mt-2 mb-6 p-4 rounded-lg text-xl font-bold text-right flex items-center justify-end"
+          >
+            0
+          </div>
 
-				<div id="result" class="bg-sky-500/100 mt-4 mb-4 p-4 rounded-lg text-lg">0</div>
+          <div id="buttonsGrid" class="grid grid-cols-3 grid-rows-3 gap-5">
+            <input
+              type="button"
+              value="1"
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="2"
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="3"
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="4"
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="5"
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="6"
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="7"
+              class="btn-digit bg-btn-digit hove bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="8"
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="9"
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="0"
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value=","
+              class="btn-digit bg-btn-digit bg-gray-950 hover:bg-gray-500 text-white text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
 
-				<div id="buttonsGrid" class="grid grid-cols-3 grid-rows-3 gap-5">
-					<input type="button" value="1" class="btn-digit m-10 w-14">
-					<input type="button" value="2" class="btn-digit m-10 w-14">
-					<input type="button" value="3" class="btn-digit m-10 w-14">
-					<input type="button" value="4" class="btn-digit m-8 w-14">
-					<input type="button" value="5" class="btn-digit m-8 w-14">
-					<input type="button" value="6" class="btn-digit m-8 w-14">
-					<input type="button" value="7" class="btn-digit m-8 w-14">
-					<input type="button" value="8" class="btn-digit m-8 w-14">
-					<input type="button" value="9" class="btn-digit m-8 w-14">
-					<input type="button" value="0" class="btn-digit m-8 w-14">
-					<input type="button" value="," class="btn-digit m-8 w-14">
+            <input
+              type="button"
+              value="+"
+              class="btn-operator bg-gray-950 hover:bg-gray-500 text-red-400 text-xl font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="-"
+              class="btn-operator bg-gray-950 hover:bg-gray-500 text-red-400 text-xl font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="*"
+              class="btn-operator bg-gray-950 hover:bg-gray-500 text-red-400 text-xl font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+            <input
+              type="button"
+              value="/"
+              class="btn-operator bg-gray-950 hover:bg-gray-500 text-red-400 text-xl font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
 
-					<input type="button" value="+" class="btn-operator text-lg font-bold">
-					<input type="button" value="-" class="btn-operator text-lg font-bold">
-					<input type="button" value="*" class="btn-operator text-lg font-bold">
-					<input type="button" value="/" class="btn-operator text-lg font-bold">
+            <input
+              type="button"
+              value="="
+              class="btn-operator bg-orange-500 hover:bg-orange-600 text-white text-xl font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95 col-span-2"
+            />
+            <input
+              type="button"
+              value="AC"
+              class="btn-operator bg-red-500 hover:bg-red-600 text-white text-lg font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-150 active:scale-95"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
 
-					<input type="button" value="=" class="btn-operator col-span-2">
-					<input type="button" value="AC" class="btn-digit">
-
-				</div>
-			</div>
-		</div>
-	</main>
-
-
-
-	<script src="src/script.js"></script>
-</body>
+    <script src="src/script.js"></script>
+  </body>
 </html>
